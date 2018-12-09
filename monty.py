@@ -43,6 +43,7 @@ def end_message(second_door, prize_door, pick, switch):
         print("YOU LOSE!")
 
 def __main__():
+    # The classic problem uses 3 doors. However, you can have as many doors as you want here. But only 2 will be left closed after the first choice. 
     num_doors = 3
 
     # Random door is assigned the prize
