@@ -1,5 +1,8 @@
 # Simulation of the Monty Hall Problem
 # Based on my playable implementation of said problem. 
+# This simulation is hardcoded to always switch doors, 
+# in order to show that this is the most efficient strategy
+# to win the game. 
 
 from monty import is_prize_door
 import random
@@ -8,28 +11,14 @@ def sim(win):
     num_doors = 3
 
     prize_door = random.randint(0, num_doors-1)
-
     pick = random.randint(0, num_doors-1)
-
     picked_prize = is_prize_door(prize_door, pick)
 
-    if picked_prize:
-        switch = 'y'
-
-        if switch == 'y': #LOSE
-            return win
-
-        elif switch == 'n': #WIN
-            return win +1
+    if picked_prize: # This will inevitably be a loss, because the computer originally chose the prize door, but is hardcoded to switch. :o
+        return win
     
-    elif not picked_prize:
-        switch = 'y'
-
-        if switch == 'y': #WIN
-            return win +1
-
-        elif switch == 'n': #LOSE
-            return win
+    elif not picked_prize: # This will be a win, because the computer originally chose the wrong door, but will switch to the correct one, since that's the only door left to switch to. 
+        return win+1
 
 y = 100
 x = 0
