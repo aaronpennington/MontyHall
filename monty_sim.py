@@ -1,22 +1,15 @@
 # Simulation of the Monty Hall Problem
 # Based on my playable implementation of said problem. 
 
-from monty import is_prize_door, Door
+from monty import is_prize_door
 import random
 
 def sim(win):
-    all_doors = []
     num_doors = 3
 
-    while (len(all_doors) < num_doors):
-        door = Door(False, False)
-        all_doors.append(door)
-
     prize_door = random.randint(0, num_doors-1)
-    all_doors[prize_door].prize = True
 
     pick = random.randint(0, num_doors-1)
-    all_doors[pick].picked = True
 
     picked_prize = is_prize_door(prize_door, pick)
 
