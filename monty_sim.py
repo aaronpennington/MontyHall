@@ -46,3 +46,4 @@ while x < y:
     x = x+1
 print("WINS: " + str(win))
 print("Percent Won by Switching: " + str((win/y) * 100) + "%")
+# You will note that the percentage here is always very close to 66% or 2/3. Like magic!
