@@ -20,7 +20,7 @@ def sim(win):
     elif not picked_prize: # This will be a win, because the computer originally chose the wrong door, but will switch to the correct one, since that's the only door left to switch to. 
         return win+1
 
-y = 100
+y = int(input("How many times do you want to run the simulation?> "))
 x = 0
 win = 0
 while x < y:
